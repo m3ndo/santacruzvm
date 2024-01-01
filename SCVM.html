@@ -1,42 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santa Cruz Virtual Management Services</title>
-    <!-- Add your stylesheets or inline styles here -->
+    <title>Santa Cruz Virtual Management</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #1f1f1f; /* Dark background color */
+            color: #fff; /* Light text color */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
         }
 
         header {
             background-color: #333;
             color: #fff;
-            padding: 10px;
-            text-align: center;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 80px; /* Adjust the size as needed */
+        }
+
+        cover-image {
+            max-height: 400px;
+            overflow: hidden;
+        }
+
+        cover-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #333; /* Darker background color */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Lighter shadow color */
         }
 
         section {
-            margin: 20px;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .subscription {
-            border: 1px solid #ccc;
+            border: 1px solid #555; /* Slightly lighter border color */
             padding: 20px;
-            margin-bottom: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            text-align: center;
         }
 
         footer {
             background-color: #333;
             color: #fff;
-            padding: 10px;
+            padding: 1em;
             text-align: center;
             position: fixed;
             bottom: 0;
@@ -44,32 +71,60 @@
         }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>Santa Cruz Virtual Management Services</h1>
+        <!-- Replace the following with your actual logo -->
+        <img src="your-logo.png" alt="Company Logo" class="logo">
+        <h1>Santa Cruz Virtual Management</h1>
     </header>
 
-    <section>
-        <div class="subscription">
-            <h2>Basic Plan</h2>
-            <p>Description of the basic plan and its features.</p>
-            <p>Price: $X/month</p>
-            <button>Subscribe</button>
-        </div>
+    <cover-image>
+        <!-- Replace the following with your actual cover image -->
+        <img src="your-cover-image.png" alt="Cover Image">
+    </cover-image>
 
-        <!-- Repeat the following block for each subscription model -->
-        <div class="subscription">
-            <h2>Standard Plan</h2>
-            <p>Description of the standard plan and its features.</p>
-            <p>Price: $Y/month</p>
-            <button>Subscribe</button>
-        </div>
-        <!-- Repeat the block above for each subscription model -->
+    <main>
+        <section>
+            <!-- Subscription Plans -->
+            <div class="subscription">
+                <h2>Virtual Assistant</h2>
+                <p>Our virtual assistant service provides dedicated support to handle administrative tasks, manage calendars, and assist with day-to-day operations, allowing you to focus on core business activities.</p>
+            </div>
 
-    </section>
+            <div class="subscription">
+                <h2>Operations Manager</h2>
+                <p>Our operations manager subscription is designed for businesses seeking efficient management of their daily operations. We streamline processes and optimize workflows for enhanced productivity.</p>
+            </div>
+
+            <div class="subscription">
+                <h2>Financial Operations</h2>
+                <p>Optimize your financial processes with our financial operations subscription. We offer accounting, bookkeeping, and financial analysis services to ensure the financial health of your business.</p>
+            </div>
+
+            <div class="subscription">
+                <h2>Consulting Services</h2>
+                <p>Our consulting services provide expert advice and strategic guidance to help your business overcome challenges, achieve growth, and make informed decisions in various areas, including management and technology.</p>
+            </div>
+
+            <div class="subscription">
+                <h2>Property Management</h2>
+                <p>For businesses with property assets, our property management subscription offers comprehensive solutions. We handle property maintenance, tenant relations, and financial management for optimal property performance.</p>
+            </div>
+
+            <div class="subscription">
+                <h2>Other Services</h2>
+                <p>Explore our custom services tailored to meet unique business needs. Whether it's project management, special consulting, or other specific requirements, we adapt to provide the support you require.</p>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2023 Your Virtual Management Services. All rights reserved.</p>
+        <p>&copy; Santa Cruz Virtual Management</p>
+        <p>Phone: (831) 239-5139</p>
+        <p>Email: manny@santacruzvm.com</p>
+        <p>About Us: Your about us content goes here...</p>
     </footer>
 </body>
+
 </html>
