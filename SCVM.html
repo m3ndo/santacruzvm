@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santa Cruz Virtual Management</title>
     <script src="https://kit.fontawesome.com/ba47487324.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Animation</title>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -72,12 +76,35 @@
             width: 100%;
         }
 
-            #box1 {
-                width: 250px;
-                height: 250px;
-                bacground: #333;
-                font-size: 225px
-                text-align: center;
+        #box1 {
+            width: 250px;
+            height: 250px;
+            bacground: #333;
+            font-size: 225px
+            text-align: center;
+
+         .slide-in-text {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            opacity: 0;
+            animation: slideIn 2s forwards;
+        }
+
+        @keyframes slideIn {
+            0% {
+            width: 0;
+            opacity: 0;
+            }
+
+            100% {
+            width: 100%;
+            opacity: 1;
+            }   
                 
         }
         
@@ -147,6 +174,10 @@
         <p>About Us: Santa Cruz Local Small Business!</p>
     </footer>
 
+      <div class="slide-in-text">
+        <h1>Hello, I'm Sliding In!</h1>
+    </div>
+    
     <#box1>
         <p>Slide</p>
         </#box1>
