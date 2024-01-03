@@ -5,188 +5,267 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santa Cruz Virtual Management</title>
-    <script src="https://kit.fontawesome.com/ba47487324.js" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Animation</title>
-    
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #0000FF; /* Dark background color */
-            color: #fff; /* Light text color */
-            overflow-x: hidden; /* Hide horizontal scrollbar */
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background-color: #333; /* Set dark mode background color */
+            color: #fff; /* Set dark mode text color */
         }
 
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em;
+            background-color: transparent; /* Set the background color to transparent */
+            color: #fff; /* Set text color to white */
+            padding: 10px;
+            text-align: center;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Space items horizontally */
             align-items: center;
         }
 
-        .logo {
-            max-width: 80px; /* Adjust the size as needed */
-        }
-
-        cover-image {
-            max-height: 400px;
-            overflow: hidden;
-        }
-
-        cover-image img {
-            width: 100%;
-            height: auto;
-        }
-
-        main {
-            max-width: 800px;
-            margin: -1000px auto;
-            padding: 20px;
-            background-color: #255,255,255,0.5; /* Darker background color */
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Lighter shadow color */
-            text-shadow: 0px 0px 5px
-        }
-
-           section {
-            margin-top: 20px;
+        nav {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            align-items: center;
         }
-        
-        .subscription {
-            border: 3px solid #f4f4f4; /* Slightly lighter border color */
-            padding: 20px;
-            flex: 1;
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+        }
+
+        .make-payment,
+        .login {
+            padding: 10px;
+            background-color: #FFC72C; /* Yellow color for "Make Payment" and "Login" sections */
+            border-radius: 5px;
+        }
+
+        .login {
+            margin-left: auto;
+            margin-right: auto; /* Center the "Login" button */
+            display: block;
+            background-color: #fff; /* White background */
+            color: #000; /* Black text color */
+        }
+
+        section.cover {
+            height: 600px; /* Adjust the height as needed */
+            background: url('cover-image.jpg') center/cover fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
             text-align: center;
+            position: relative;
+	    text-shadow: 2px 4px 4px rgba(46,91,173,0.6);
+	   
+        }
+
+        .cover h2 {
+            margin-bottom: 20px;
+            margin-top: -300px; /* Adjust the margin-top as needed */
+        }
+
+        .cover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0); /* Adjust the transparency as needed */
+        }
+
+        section.subscriptions {
+            display: flex;
+            justify-content: center; /* Center items horizontally */
+            padding: 20px;
+            flex-wrap: wrap;
+            background-color: #333; /* Set dark mode background color */
+        }
+
+        .subscription {
+            position: relative;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .subscription:hover {
+            transform: scale(1.05); /* Increase size on hover */
+        }
+
+        .popup {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 10px;
+            width: 200px;
+            z-index: 1;
+        }
+
+        .subscription:hover .popup {
+            display: block;
+
+        }
+
+        section.video {
+            text-align: center; /* Center text horizontally */
+            margin-top: 300px; /* Add margin-top for spacing */
+	    margin-bottom: -22px;
+        }
+
+        section.video h2 {
+            margin-bottom: -22px;
         }
 
         footer {
             background-color: #333;
             color: #fff;
-            padding: 1em;
             text-align: center;
+            padding: 10px;
             position: fixed;
             bottom: 0;
             width: 100%;
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            align-items: center;
         }
-
-        box1 {
-            width: 250px;
-            height: 250px;
-            bacground: #333;
-            font-size: 225px
-            text-align: center;
-            margin: 200px;
-
-         .slide-in-text {
-            position: absolute;
-            text-align: center;
-            background-color: #255,255,255,0.5;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            white-space: nowrap;
-            overflow: hidden;
-            width: 0;
-            opacity: 0;
-            animation: slideIn 2s forwards;
-        }
-
-        @keyframes slideIn {
-            0% {
-            width: 0;
-            opacity: 0;
-            }
-
-            100% {
-            width: 100%;
-            opacity: 1;
-            }   
-                
-        }
-        
     </style>
 </head>
 
 <body>
-    
     <header>
-        <!-- Replace the following with your actual logo -->
-        <img src="your-logo.png" alt="Company Logo" class="logo">
-        <h1>Santa Cruz Virtual Management</h1>
-        
-        <i class="fa-solid fa-phone"></i>
-            <h2>(831) 239-5139</h2>
-        
+        <nav>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+        </nav>
     </header>
 
-    <div class="slide-in-text">
-        <h1>Free Consultations Available</h1>
-        <p>(831) 239-5139</p>
-    </div>
-    
-    <cover-image>
-        <!-- Replace the following with your actual cover image -->
-        <img src="your-cover-image.png" alt="Cover Image">
-    </cover-image>
+    <section class="cover">
+        <div class="cover-overlay"></div>
+        <h2>Welcome to Santa Cruz Virtual Management</h2>
+        <a href="#" class="login">Login</a>
+        <!-- Add any additional text or call-to-action here -->
+    </section>
 
-    <main>
-        <section>
-            <!-- Subscription Plans -->
-            <div class="subscription">
-                <h2>Virtual Assistant</h2>
-                <p>Our virtual assistant service provides dedicated support to handle administrative tasks, manage calendars, and assist with day-to-day operations, allowing you to focus on core business activities.</p>
+    <section class="subscriptions">
+        <!-- Subscription categories -->
+        <div class="subscription">
+            <h3>Virtual Assistant</h3>
+            <div class="popup">
+                <p><b>-Customer Service</b></p>
+		<p><b>-Email & Phone Calls</b></p>
+		<p><b>-Calendar correspondence</b></p>
+		<p><b>-Customer Follow Ups</b></p>
+		<p></p>
+		<p><b>Addons Available:</b></p>
+		<p><b>-Business documents</b></p>
+ 		<p><b>-Meeting management</b></p>
             </div>
+            <!-- Add icon or image here -->
+        </div>
 
-            <div class="subscription">
-                <h2>Operations Manager</h2>
-                <p>Our operations manager subscription is designed for businesses seeking efficient management of their daily operations. We streamline processes and optimize workflows for enhanced productivity.</p>
+        <div class="subscription">
+            <h3>Operations Manager</h3>
+            <div class="popup">
+                <p><b>-Customer Service</b></p>
+		<p><b>-Email response</b></p>
+		<p><b>-Calendar correspondence</b></p>
+		<p><b>-Customer Follow Ups</b></p>
+		<p><b>-Vendor Onboarding</b></p>
+		<p><b>-Insurance Documents</b></p>
+		<p><b>-Staff Trainings</b></p>
+		<p></p>
+		<p><b>Addons Available:</b></p>
+		<p><b>-Staff Hiring</b></p>
             </div>
+            <!-- Add icon or image here -->
+        </div>
 
-            <div class="subscription">
-                <h2>Financial Operations</h2>
-                <p>Optimize your financial processes with our financial operations subscription. We offer accounting, bookkeeping, and financial analysis services to ensure the financial health of your business.</p>
+        <div class="subscription">
+            <h3>Financial Manager</h3>
+            <div class="popup">
+                <p><b>-Vendor Onboarding</b></p>
+		<p><b>-Insurance Documents</b></p>
+		<p><b>-A/R</b></p>
+		<p><b>-A/P</b></p>
+		<p><b>-Budgeting</b></p>
+		<p><b>-PnL</b></p>
+		<p></p>
+		<p><b>Addons Available:</b></p>
+		<p><b>-EoM closing</b></p>
+		<p><b>-EoY closing</b></p>
+		<p><b>-Tax Prep</b></p>
             </div>
+            <!-- Add icon or image here -->
+        </div>
 
-            <div class="subscription">
-                <h2>Consulting Services</h2>
-                <p>Our consulting services provide expert advice and strategic guidance to help your business overcome challenges, achieve growth, and make informed decisions in various areas, including management and technology.</p>
+        <div class="subscription">
+            <h3>Property Management</h3>
+            <div class="popup">
+                <p><b>-Property Management Services</b></p>
+		<p><b>-Rental Agreements</b></p>
+		<p><b>-Property walk throughs</b></p>
+		<p><b>-Property correspondence</b></p>
+		<p></p>
+		<p><b>Addons Available:</b></p>
+		<p><b>-3D virtual property renderings</b></p>
+		<p><b>-Permit Pulling</b></p>
             </div>
+            <!-- Add icon or image here -->
+        </div>
 
-            <div class="subscription">
-                <h2>Property Management</h2>
-                <p>For businesses with property assets, our property management subscription offers comprehensive solutions. We handle property maintenance, tenant relations, and financial management for optimal property performance.</p>
-                transform: scaleY(3);
-                <p>Next item</p>
-                <p>Next item2</p>
-                <p></p>
-                <p></p>
+        <div class="subscription">
+            <h3>Consulting Services</h3>
+            <div class="popup">
+                <p><b>-Financial planning</b></p>
+		<p><b>-Roth IRA, 529 College Plans</b></p>
+		<p><b>-Retirement Savings</b></p>
+		<p><b>-Home Pre-Qualification</b></p>
+		<p></p>
+		<p><b>Addons Available:</b></p>
+		<p><b>-Day trading/charting</b></p>
+		<p><b>-Brokerage account setups</b></p>
             </div>
+            <!-- Add icon or image here -->
+        </div>
 
-            <div class="subscription">
-                <h2>Other Services</h2>
-                <p>Explore our custom services tailored to meet unique business needs. Whether it's project management, special consulting, or other specific requirements, we adapt to provide the support you require.</p>
+        <div class="subscription">
+            <h3>Other Services</h3>
+            <div class="popup">
+                <p><b>-Web Development Services</b></p>
+		<p><b>-SEO and Social Media</b></p>
+		<p><b>-Scale your Business</b></p>
+		<p><b>-Inquire About Other Services</b></p>
             </div>
-        </section>
-    </main>
+            <!-- Add icon or image here -->
+        </div>
+    </section>
+
+    <section class="video">
+        <h2>About Santa Cruz Virtual Management</h2>
+        <video width="640" height="360" controls>
+            <source src="your-video.mp4" type="video/mp4"> <!-- Replace 'your-video.mp4' with the path to your video file -->
+            Your browser does not support the video tag.
+        </video>
+    </section>
 
     <footer>
-        <p>&copy; Santa Cruz Virtual Management</p>
-        <p>Phone: (831) 239-5139</p>
-        <p>Email: manny@santacruzvm.com</p>
-        <p>About Us: Santa Cruz Local Small Business!</p>
+        <p>&copy; 2023 Santa Cruz Virtual Management. All rights reserved.</p>
     </footer>
-    
-    <box1>
-        margin: 200px;
-        <p>Free Consultations Available!</p>
-        </box1>
 </body>
 
 </html>
