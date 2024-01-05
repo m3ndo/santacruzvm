@@ -1,74 +1,135 @@
+/* styles.css */
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #0000FF; /* Dark background color */
-    color: #fff; /* Light text color */
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: #333;
+    color: #fff;
 }
 
 header {
-    background-color: #333;
+    background-color: transparent;
     color: #fff;
-    padding: 1em;
+    padding: 10px;
+    text-align: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    max-width: 80px; /* Adjust the size as needed */
-}
-
-cover-image {
-    max-height: 400px;
-    overflow: hidden;
-    position: relative; /* Added position relative */
-}
-
-cover-image img {
-    width: 100%;
-    height: auto;
-    display: block; /* Added to remove extra space below image */
-}
-
-.cover-image .description {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-}
-
-main {
-    max-width: 800px;
-    margin: 0 auto; /* Adjusted margin */
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.5); /* Fixed color format */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Lighter shadow color */
-}
-
-section {
-    margin-top: 400px;
+nav {
     display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.make-payment, .login {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.login {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: #fff;
+    color: #000;
+}
+
+section.cover {
+    height: 600px;
+    background: url('your-cover-image.png') center/cover fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    text-shadow: 2px 4px 4px rgba(46, 91, 173, 0.6);
+}
+
+.cover h2 {
+    margin-bottom: 20px;
+    margin-top: -220px;
+}
+
+.cover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+section.subscriptions {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
     flex-wrap: wrap;
-    gap: 200px;
+    background-color: #333;
 }
 
 .subscription {
-    border: 3px solid #f4f4f4; /* Slightly lighter border color */
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     padding: 20px;
-    flex: 1;
+    margin: 10px;
     text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.subscription:hover {
+    transform: scale(1.05);
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px;
+    z-index: 1;
+}
+
+.subscription:hover .popup {
+    display: block;
+}
+
+section.video {
+    text-align: center;
+    margin-top: 400px;
+    margin-bottom: -22px;
+}
+
+section.video h2 {
+    margin-bottom: 100px;
 }
 
 footer {
     background-color: #333;
     color: #fff;
-    padding: 1em;
     text-align: center;
+    padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
