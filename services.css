@@ -1,3 +1,55 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.service-slide {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #555;
+    margin-bottom: 20px;
+    background-color: #222;
+}
+
+.service-slide h2 {
+    color: #61dafb;
+}
+
+.service-slide p {
+    color: #ffffff;
+}
+
+.service-slide img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+}
+
+
 .service-slide {
     text-align: center;
     padding: 20px;
